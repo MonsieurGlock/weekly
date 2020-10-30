@@ -15,7 +15,14 @@ int main(){
     for(i=0 ; i<n ; i++){
         printf("#%d Average speed [km/hr] :",i+1);
         scanf("%f",&x[i].aveSpeed);
-        x[i].aveSpeed = hrToMin(x[i].aveSpeed);
+        if(x[i].aveSpeed >= 0){
+            x[i].aveSpeed = hrToMin(x[i].aveSpeed);
+        }
+        else{
+            x[i].aveSpeed = -x[i].aveSpeed;
+            x[i].aveSpeed = hrToMin(x[i].aveSpeed);
+        }
+        
         printf("#%d Minute :",i+1);
         scanf("%f",&x[i].Min);
     }
